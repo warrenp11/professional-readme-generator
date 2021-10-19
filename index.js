@@ -4,21 +4,44 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 inquirer
   .prompt([
-    /* Pass your questions in here */
     {
         type: 'input',
         name: 'github',
-        message: 'what is your github username?'
+        message: 'what is your github username? (required)',
+        validate: username => {
+            if(username) {
+                return true;
+            } else {
+                console.log('you must enter a github username!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
-        message: 'what is your email address?'
+        message: 'what is your email address? (required)',
+        validate: email => {
+            if(email) {
+                return true;
+            } else {
+                console.log('you must enter an email address!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'project',
-        message: 'what is your project name?'
+        message: 'what is your project name? (required)',
+        validate: project => {
+            if(project) {
+                return true;
+            } else {
+                console.log('you must enter a project name!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -52,10 +75,11 @@ inquirer
         message: 'what do users need to know about contributing to repo?'
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'what licenses does your project have?'
-    },
+        message: 'what licenses does your project have?',
+        choices: ['MIT', 'Driver\'s', 'Other']
+    }
     ])
   .then((answers) => {
     // Use user feedback for... whatever!!
