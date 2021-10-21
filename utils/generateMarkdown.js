@@ -1,6 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  console.log(license);
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -15,17 +17,19 @@ const generateMarkdown = data => {
   return `
   # ${data.project}
 
+  ![Code badge](https://img.shields.io/github/languages/top/${data.github}/${data.repo})
+
   ## Description
   ${data.description}
 
   ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Tests](#tests)
-    * [Credits](#credits)
-    * [Contributing](#contributing)
-    * [Questions](#questions)
-    * [License](#license)
+  * [Installation](#installation)</br>
+  * [Usage](#usage)</br>
+  * [Tests](#tests)</br>
+  * [Credits](#credits)</br>
+  * [Contributing](#contributing)</br>
+  * [Questions](#questions)</br>
+  * [License](#license)
     
   ## Installation
   ${data.install}
@@ -43,7 +47,7 @@ const generateMarkdown = data => {
   ${data.contribute}
 
   ## Questions
-  If you have any questions about this project, contact me directly at ${data.email}. You can view more of my projects at https://www.github.com/${data.github}.
+  If you have any questions about this project contact me directly at ${data.email}. You can view more of my projects at https://www.github.com/${data.github}.
   
   ## License
   Licensed under the ${data.license} license.

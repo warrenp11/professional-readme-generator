@@ -21,6 +21,19 @@ const questions = () => {
           }
       },
       {
+        type: 'input',
+        name: 'repo',
+        message: 'what is name of the github repository for your project? (required)',
+        validate: username => {
+            if(username) {
+                return true;
+            } else {
+                console.log('you must enter the github repository name!');
+                return false;
+            }
+        }
+      },
+      {
           type: 'input',
           name: 'email',
           message: 'what is your email address? (required)',
@@ -64,8 +77,7 @@ const questions = () => {
       {
         type: 'input',
         name: 'tests',
-        message: 'what command should be run for tests?',
-        // default: 'npm index'
+        message: 'what command should be run for tests?'
       },
       {
           type: 'input',
@@ -81,7 +93,7 @@ const questions = () => {
           type: 'list',
           name: 'license',
           message: 'what licenses does your project have?',
-          choices: ['MIT', 'Apache', 'GPL', 'BSD', 'Unlicensed', 'Other']
+          choices: ['MIT', 'Apache', 'GPL', 'BSD3', 'BSD3', 'Unlicensed', 'Other']
       }
     ]);
 };
