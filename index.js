@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -61,15 +62,15 @@ const questions = () => {
           message: 'provide instructions and examples for use'
       },
       {
-          type: 'input',
-          name: 'credit',
-          message: 'list collaborators and third-party assets, if any'
+        type: 'input',
+        name: 'tests',
+        message: 'what command should be run for tests?',
+        // default: 'npm index'
       },
       {
           type: 'input',
-          name: 'tests',
-          message: 'what command should be run for tests?',
-          // default: 'npm index'
+          name: 'credit',
+          message: 'list collaborators and third-party assets, if any'
       },
       {
           type: 'input',
@@ -82,20 +83,25 @@ const questions = () => {
           message: 'what licenses does your project have?',
           choices: ['MIT', 'Apache', 'GPL', 'BSD', 'Unlicensed', 'Other']
       }
-      ])
-    .then((answers) => {
-      // Use user feedback for... whatever!!
-      console.log(answers);
-    })
+    ]);
 };
 
-questions();
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = data => {
+    fs.writeFile('README.md', data, err => {
+        if (err) throw err;
+        console.log('check out your new README.md!');
+    });
+};
 
-// TODO: Create a function to initialize app
-function init() {}
 
-// Function call to initialize app
-init();
+
+// // TODO: Create a function to initialize app,
+questions()
+    .then(answers => {
+        return generateMarkdown(answers);
+    })
+    .then(data => {
+        return writeToFile(data)
+    })
+    .catch(err => {console.log(err)});
