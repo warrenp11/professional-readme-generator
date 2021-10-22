@@ -54,7 +54,7 @@ At the command line, type:
     npm install inquirer
 
 ## Usage
-(vid demo)
+![Video Demo](./assets/node-readme-demo.webm)
 
 ## Credits
 [Inquirer](https://www.npmjs.com/package/inquirer)
