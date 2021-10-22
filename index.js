@@ -2,6 +2,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const renderLicenseBadge = require('./utils/generateMarkdown.js');
+const { clearLine } = require('readline');
+const { clear } = require('console');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -93,7 +96,7 @@ const questions = () => {
           type: 'list',
           name: 'license',
           message: 'what licenses does your project have?',
-          choices: ['MIT', 'Apache', 'GPL', 'BSD3', 'BSD3', 'Unlicensed', 'Other']
+          choices: ['MIT', 'GNU General Public License 2.0', 'Apache License 2.0', 'GNU General Public License 3.0']
       }
     ]);
 };
