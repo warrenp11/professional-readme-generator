@@ -6,6 +6,7 @@ This project was designed as a homework assignment for Rutgers Coding Boot Camp.
   
 Initial starter code was provided for this project.
 
+
 >Acceptance Criteria
 >>GIVEN a command-line application that accepts user input
 >>
@@ -46,6 +47,7 @@ Initial starter code was provided for this project.
 * [License](#license)
 
 ## Installation
+
 ### Install Inquirer package
 At the command line, type:
 
@@ -60,12 +62,14 @@ At the command line, type:
 [Node.js](https://nodejs.org/en/docs/)
 
 ## Project Insight
+This project build felt more natural for me than previous projects. And while I am grateful for the starter code which was provided to us, I feel confident that I could've completed this build without it. Getting the license badges to display presented the most difficulty.
 
 ## Questions
-  If you have any questions about this project contact me directly at warrenp11@gmail.com. 
+If you have any questions about this project contact me directly at warrenp11@gmail.com. 
   
-  Visit this project's repository at https://www.github.com/warrenp11/professional-readme-generator
+Visit this project's repository at https://www.github.com/warrenp11/professional-readme-generator
 
-  View more of my projects at https://www.github.com/warrenp11
+View more of my projects at https://www.github.com/warrenp11
 
 ## License
+Licensed under the [MIT](./license.txt/) license.
