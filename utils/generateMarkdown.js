@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// returns a license badge based on which license is passed in
 const renderLicenseBadge = function(data) {
   let licenseType = data.license;
   let licenseString = " "
@@ -18,16 +17,7 @@ const renderLicenseBadge = function(data) {
   return licenseString
   };
 
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
+//generate markdown for README
 const generateMarkdown = data => {
   return `
   # ${data.project}
@@ -67,6 +57,6 @@ const generateMarkdown = data => {
   ## License
   Licensed under the ${data.license} license.
 `;
-}
+};
 
 module.exports = generateMarkdown;
